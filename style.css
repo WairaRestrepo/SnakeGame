@@ -1,0 +1,193 @@
+.body-game{
+background-image: url(./img/gettyimages-1301630216-2048x2048.jpg);
+margin-left:3%;
+
+}
+
+.h11{
+  color: white;
+  border-radius:2%;
+  width:25%;
+  height:25%;
+  background-color: hsla(244, 92%, 64%, 0.274);
+  box-shadow: inset 0 0 20px 0 hsla(270, 80%, 2%, 0.733);
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.conteiner{
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+ 
+}
+.box {
+  width: 400px;/*cambiar por variables para modificar */
+  height: 400px;/*cambiar por variables para modificar*/ 
+  border: 2px solid rgb(10, 210, 245);
+  display: flex;/*para que sea flex en una sola colum*/
+  flex-wrap: wrap;/*ponerlos en una nueva fila*/
+  /*background-image: url(./img/black.gif);*/
+ 
+}
+
+.box div {/*div internos*/
+  width: 40px;
+  height: 40px;
+}
+
+.box div.snake {
+  background-color: hsla(310, 96%, 21%, 0.658);
+  
+ 
+}
+.box div.food {
+  width:38px;
+  height:38px;
+  background-color: rgba(255, 255, 0, 0.966);
+  border-radius: 40px;
+  border: 1px dashed black;
+  box-shadow:0 0 10px hsla(0, 0%, 100%, 0.829);
+}
+
+.scoree{
+  color:rgba(253, 237, 5, 0.979);
+  background-color: hsla(0, 100%, 50%, 0.295);
+  height: 15%;
+  width: 15%;
+  margin-left:5%;
+  border-radius:10%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  align-items: center;
+}
+
+.buttons{
+  margin-top:25px;
+  justify-content:space-between;
+  display: block;
+ 
+
+}
+.upp-button{
+font-family:consolas;
+justify-content: center;
+align-items: center;
+color: #5e0094dc;
+background-color:hsla(60, 100%, 50%, 0.61);
+text-transform: uppercase;
+font-size:24px;
+overflow: hidden;
+transition:0.2s;
+cursor: pointer;
+}
+.upp-button:hover{
+  color: #255784;
+  background: #9011da83;
+  box-shadow:0 0 10px #9011da83;
+}
+
+
+.downn-button{
+  font-family:consolas;
+justify-content: center;
+align-items: center;
+color: #5e0094dc;
+background-color:hsla(60, 100%, 50%, 0.61);
+text-transform: uppercase;
+font-size:25px;
+overflow: hidden;
+transition:0.2s;
+cursor: pointer;
+}
+
+.downn-button:hover{
+  color: #255784;
+  background: #9011da83;
+  box-shadow:0 0 10px #9011da83;
+}
+
+
+.leftt-button{
+
+font-family:consolas;
+justify-content: center;
+align-items: center;
+color: #5e0094dc;
+background-color:hsla(60, 100%, 50%, 0.61);
+text-transform: uppercase;
+font-size:25px;
+overflow: hidden;
+transition:0.2s;
+cursor: pointer;
+}
+
+.leftt-button:hover{
+  color: #255784;
+  background: #9011da83;
+  box-shadow:0 0 10px #9011da83;
+}
+
+
+.rightt-button{
+
+  font-family:consolas;
+justify-content: center;
+align-items: center;
+color: #5e0094dc;
+background-color:hsla(60, 100%, 50%, 0.61);
+text-transform: uppercase;
+font-size:25px;
+overflow: hidden;
+transition:0.2s;
+cursor: pointer;
+}
+
+.rightt-button:hover{
+  color: #255784;
+  background: #9011da83;
+  box-shadow:0 0 10px #9011da83;
+}
+
+.playy-button{
+font-family:consolas;
+justify-content: center;
+align-items: center;
+color: #5e0094dc;
+background-color:hsla(128, 100%, 50%, 0.637);
+text-transform: uppercase;
+font-size:25px;
+overflow: hidden;
+transition:0.2s;
+cursor: pointer;
+}
+
+.playy-button:hover{
+  color: #255784;
+  background: #da112283;
+  box-shadow:0 0 10px #9011da83;
+}
+/********Card instruciones******/
+
+.instruc{
+    border:2px solid rgba(12, 0, 17, 0.993);
+    width:220px;
+    height:370px;
+    padding-top:1px;
+    border-radius: 1rem;
+    box-shadow:0 1rem 1rem rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;/*para que oculte lo que salga del div*/
+    backdrop-filter:blur(0.3rem);
+    background-color: rgba(237, 151, 248, 0.171);
+    border:1rem solid  rgba(225, 225, 225, 0.068);
+    color: yellow;
+    text-align:center ;
+}
+
+.titulocard{
+  font-family:consolas;
+  
+}
+/*************** fincard**********************/
