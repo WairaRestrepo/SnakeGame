@@ -10,32 +10,37 @@ const rightButton = document.getElementById('right-button');
 const score = document.getElementById('score');
 
 //Configuraciones del juego 
-let interval = 500;
+let interval;
 let accumulator = 1;
 let divs;
 let idInterval;
 let foodIndex;
 let scoreCount = 0;
 
-/*let buttonsmusic = new Audio;
-let muertemusic = new Audio('./music/muerte.wav');
-let playgamemusic = new Audio;
-muertemusic.play();*/
+let buttonsmusic =new Audio ('./music/lifeandfood.wav');
+let muertemusic = new Audio ('./music/muerte.wav');
+let playgamemusic = new Audio ('./music/comenzar.wav');
 
 
+//https://www.javascripttutorial.net/javascript-dom/javascript-keyboard-events/#:~:text=The%20keyboard%20event%20properties&text=The%20key%20property%20returns%20the,code%20returns%20KeyZ%20.
+//http://www.java2s.com/example/javascript/dom/switch-on-key-code-in-key-down-event-handler.htmlhttp://www.java2s.com/example/javascript/dom/switch-on-key-code-in-key-down-event-handler.html
 document.addEventListener('keydown', (event) => {
   switch (event.code) {
       case 'ArrowUp':
           up();
+          buttonsmusic.play();
           break;
       case 'ArrowDown':
           down();
+          buttonsmusic.play();
           break;
       case 'ArrowLeft':
           left();
+          buttonsmusic.play();
           break;
       case 'ArrowRight':
           right();
+          buttonsmusic.play();
           break;
   }
 });
@@ -72,6 +77,7 @@ function moveSnake() {//Para que se mueva
   const tail = snake.shift();
   divs[tail].classList.remove('snake');
   const head = snake[snake.length - 1] + accumulator;
+  console.log(interval)
   if (isCollision(head) || isCollision(snake)) {
     alert('game over');
     clearGame();
@@ -89,20 +95,26 @@ function moveSnake() {//Para que se mueva
 
 
 function eatFood(tail) {//para que coma la culebrita tail=cola
+  
   if (snake[snake.length - 1] === foodIndex) {
+    clearInterval(idInterval)
+    console.log("Entra a eatFood")
     divs[foodIndex].classList.remove('food');
     snake.unshift(tail);
     divs[tail].classList.add('snake');
 
-    if (scoreCount <= 4) {//para que cuando coma cambie la velocidad
+    if (scoreCount <= 5) {//para que cuando coma cambie la velocidad
       score.innerText = ++scoreCount;
       randomFood();
-      interval = interval - 15;
-      idInterval = setInterval(() => { moveSnake(); }, interval);
+      if(interval != 100){
+        interval = interval - 100; //Velocidad limite
+      }
+      idInterval = setInterval(moveSnake, interval);
+      
       console.log('test de ingreso a quitar velocidad')
     } else {
 
-      alert('!Felicidades ganador¡ has completado todos los puntos permitidos');
+      alert('¡Felicidades ganador! has completado todos los puntos permitidos');
       clearGame();
 
     }
@@ -120,11 +132,14 @@ function isCollision(index) {//Cuando choca
     || (accumulator === -1 && (index + 1) % size === 0)
   ) {
     return true;
+    muertemusic.play();
   }
   return false;
 }
 
 function startGame() {// se activa cuando le damos a el boton playButton
+  buttonsmusic.play();
+  console.log("Esta llamando StartGame")
   clearGame();
   idInterval = setInterval(() => {
     moveSnake();
@@ -135,6 +150,8 @@ function clearGame() {
   snake = [0, 1, 2];
   box.innerHTML = '';
   accumulator = 1;
+  interval = 500;
+  console.log(interval)
   /*interval = 500;*/
   scoreCount = 0;
   score.innerText = scoreCount;
@@ -142,6 +159,7 @@ function clearGame() {
   createBox();
   drawSnake();
   randomFood();
+  
 }
 
 function up() {

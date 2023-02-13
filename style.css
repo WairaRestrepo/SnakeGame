@@ -27,7 +27,7 @@ margin-left:3%;
   border: 2px solid rgb(10, 210, 245);
   display: flex;/*para que sea flex en una sola colum*/
   flex-wrap: wrap;/*ponerlos en una nueva fila*/
-  /*background-image: url(./img/black.gif);*/
+  background-image: url(./img/black.gif);
  
 }
 
@@ -182,8 +182,9 @@ cursor: pointer;
     backdrop-filter:blur(0.3rem);
     background-color: rgba(237, 151, 248, 0.171);
     border:1rem solid  rgba(225, 225, 225, 0.068);
-    color: yellow;
-    text-align:center ;
+    color: rgb(247, 247, 244);
+    text-align:center;
+    padding:1.5px;
 }
 
 .titulocard{
